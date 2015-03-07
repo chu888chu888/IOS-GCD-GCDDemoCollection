@@ -34,22 +34,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sIS-4y-ayk">
                                 <rect key="frame" x="29" y="72" width="262" height="180"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-nl-ppL">
+                                <rect key="frame" x="16" y="269" width="186" height="30"/>
+                                <state key="normal" title="downloadImage">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3rd-rr-OoF"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzk-rK-oxq">
-                                <rect key="frame" x="98" y="398" width="47" height="30"/>
-                                <state key="normal" title="test2">
+                                <rect key="frame" x="29" y="307" width="127" height="30"/>
+                                <state key="normal" title="threadsyn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="threadsyn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oFR-b4-W1K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGI-JV-4vd">
-                                <rect key="frame" x="169" y="403" width="46" height="30"/>
-                                <state key="normal" title="test3">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="threadseq:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HjC-1T-ESa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzj-bj-8e7">
@@ -88,13 +88,13 @@
                                     <action selector="dispatchbarrier:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uBG-mO-i25"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-nl-ppL">
-                                <rect key="frame" x="29" y="269" width="262" height="30"/>
-                                <state key="normal" title="downloadImage">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGI-JV-4vd">
+                                <rect key="frame" x="34" y="340" width="122" height="30"/>
+                                <state key="normal" title="threadseq">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="downloadImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3rd-rr-OoF"/>
+                                    <action selector="threadseq:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HjC-1T-ESa"/>
                                 </connections>
                             </button>
                         </subviews>

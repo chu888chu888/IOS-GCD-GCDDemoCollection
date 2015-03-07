@@ -24,15 +24,9 @@
     count = 0;
 }
 
-- (void)threaddownloadImage:(NSString *)url
-{
-    NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
-    UIImage *image = [[UIImage alloc] initWithData:data];
-    if (image) {
-        [self performSelectorOnMainThread:@selector(updateImage:) withObject:image waitUntilDone:YES];
-    }
-}
 
+#pragma mark - threadsyn
+#pragma mark   采用NSThread线程,并行加锁
 - (IBAction)threadsyn:(id)sender
 {
     ticketsLock = [[NSLock alloc] init];
@@ -48,7 +42,30 @@
     [ticketsThreadtwo start];
     
 }
+- (void)runsyn
+{
+    while (TRUE) {
+        [ticketsLock lock];
+        
+         //[ticketsCondition lock];
+        
+        if (tickets >= 0) {
+            [NSThread sleepForTimeInterval:0.09];
+            count = 100 -tickets;
+            NSLog(@"当前票数是:%d,售出:%d,线程名:%@",tickets,count,[[NSThread currentThread] name]);
+            tickets--;
+        }else{
+            break;
+        }
+        
+         //[ticketsCondition unlock];
+        [ticketsLock unlock];
+    }
+}
 
+
+#pragma mark - threadseq
+#pragma mark   采用NSThread线程,串行加锁
 - (IBAction)threadseq:(id)sender
 {
     ticketsLock = [[NSLock alloc] init];
@@ -67,14 +84,47 @@
     [ticketsThreadThree setName:@"threadthree"];
     [ticketsThreadThree start];
 }
-
-
+- (void)runseq
+{
+    while (TRUE) {
+        
+        [ticketsCondition lock];
+        [ticketsCondition wait];
+        [ticketsLock lock];
+        
+        if (tickets >= 0) {
+            [NSThread sleepForTimeInterval:0.09];
+            count = 100 - tickets;
+            NSLog(@"当前票数是:%d,售出:%d,线程名:%@",tickets,count,[[NSThread currentThread] name]);
+            tickets--;
+        }else{
+            break;
+        }
+        
+        [ticketsLock unlock];
+        [ticketsCondition unlock];
+    }
+}
+#pragma mark - downloadImage
+#pragma mark 采用NSThread线程,之后通知主线程更新界面
 - (IBAction)downloadImage:(id)sender
 {
     NSThread *thread = [[NSThread alloc] initWithTarget:self
                                                selector:@selector(threaddownloadImage:)
                                                  object:kURL];
     [thread start];
+}
+- (void)threaddownloadImage:(NSString *)url
+{
+    NSData *data = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    if (image) {
+        [self performSelectorOnMainThread:@selector(updateImage:) withObject:image waitUntilDone:YES];
+    }
+}
+- (void)updateImage:(UIImage *)image
+{
+    imageView.image = image;
 }
 
 
@@ -155,48 +205,9 @@
     
 }
 
-- (void)runsyn
-{
-    while (TRUE) {
-        [ticketsLock lock];
 
-        // [ticketsCondition lock];
-        
-        if (tickets >= 0) {
-            [NSThread sleepForTimeInterval:0.09];
-            count = 100 -tickets;
-            NSLog(@"当前票数是:%d,售出:%d,线程名:%@",tickets,count,[[NSThread currentThread] name]);
-            tickets--;
-        }else{
-            break;
-        }
-        
-        // [ticketsCondition unlock];
-        [ticketsLock unlock];
-    }
-}
 
-- (void)runseq
-{
-    while (TRUE) {
-        
-        [ticketsCondition lock];
-        [ticketsCondition wait];
-        [ticketsLock lock];
-        
-        if (tickets >= 0) {
-            [NSThread sleepForTimeInterval:0.09];
-            count = 100 - tickets;
-            NSLog(@"当前票数是:%d,售出:%d,线程名:%@",tickets,count,[[NSThread currentThread] name]);
-            tickets--;
-        }else{
-            break;
-        }
-        
-        [ticketsLock unlock];
-        [ticketsCondition unlock];
-    }
-}
+
 
 - (void)runlock
 {
@@ -208,10 +219,7 @@
     }
 }
 
-- (void)updateImage:(UIImage *)image
-{
-    imageView.image = image;
-}
+
 
 - (void)didReceiveMemoryWarning
 {
