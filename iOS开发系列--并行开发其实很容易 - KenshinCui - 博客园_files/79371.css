@@ -1,0 +1,226 @@
+/*文章文本内容*/
+div.post div.entry
+{
+    font-family: Georgia,"Times New Roman",Times,sans-serif
+}
+div.post div.entry h1, div.post div.entry h2, div.post div.entry h3 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+}
+div.post div.entry h1 {
+	padding:1px 5px 1px 5px;/*padding:5px*/
+	color:white;
+	background-color: #A3BB50;/*gray;*/
+}
+div.post h2 {
+	font-size: 22px;
+	line-height: 100%;
+}
+div.post div.entry pre.code {
+    font-family: Consolas
+    border-style: dashed;
+    border-left: solid 5px #6ce26c
+}
+div#information
+{
+    background-color: #f8f8ee;
+    border: solid 1px #e8e7d0;
+    padding: 5px 10px 0px 10px;
+    min-height: 10px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: #666666
+}
+/*文章代码内容*/
+.code
+{
+    background: #F5F5F5;/*#fbedbb*/
+    border: #c0c0c0 1px solid;
+    padding: 5px;
+    margin: 0 40px 0 20px;
+    font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;/*Verdana,Helvetica, "微软雅黑" , Arial, "宋体" , sans-serif;*/
+}
+/*文章表格样式设置*/
+.kcTable
+{
+    border-collapse: collapse;
+    border: none;
+}
+.kcTable th{ background-color:#fff;}
+.kcTable td
+{
+   border: solid #000 1px;
+}
+/*文章图片设置*/
+/* blogImg image css 边框 阴影 圆角 效果
+------------------------*/
+img.blogImg{ 
+/*display:block; padding:7px; 
+border:1px solid #dedede; */
+box-shadow: 0 1px 3px rgba(0,0,0,.3); 
+/*border-radius: 4px; */
+}
+img{
+max-width:800px;
+}
+/*文章Note栏目*/
+t/*able.note{
+border-collapse:collapse;border:none;
+}*/
+/*table.note td{
+border:solid #000 1px;
+}*/
+/*表格样式*/
+.kc-table
+{
+	border-collapse: collapse;
+	border: none;
+	font-size:14pt;
+}
+.kc-table>thead>tr>th,
+.kc-table>tbody>tr>th,
+.kc-table>tfoot>tr>th,
+.kc-table>thead>tr>td,
+.kc-table>tbody>tr>td,
+.kc-table>tfoot>tr>td
+{
+    border:solid #4F81BD 1px;
+    padding:5px;
+}
+.kc-table>thead>tr>th
+{ 
+    background-color:#5B9BD5;
+    border-bottom:solid #5B9BD5 2px;
+    color:#FFF;
+    font-weight:bold;
+}
+.kc-table>tbody>tr>td,
+.kc-table>tfoot>tr>td
+{
+    /*background-color:#EAEFF6;*/
+	color:#0066CC;
+}
+.kc-table>thead>tr.active:hover>td,
+.kc-table>tbody>tr.active:hover>td,
+.kc-table>tfoot>tr.active:hover>td
+{
+    background-color:#EAEFF7;
+}
+.kc-table>tbody>tr.subhead
+{
+	background-color:#D0D8E8;
+	color:#FFF;
+	font-weight:bold;
+}
+/*下载按钮样式*/
+#kc-apple-download-btn {
+    position: relative;
+    height: 60px;
+    margin: auto;
+    padding: 34px 0;
+}
+
+
+
+
+#kc-apple-download-btn a{
+    position: relative;
+    height: 60px;
+    text-align: center;
+    zoom: 1;
+    color: #fff;
+    border-radius: 3px;
+    outline: none;
+	text-decoration:none;
+}
+#kc-apple-download-btn a:link,
+#kc-apple-download-btn a:hover,
+#kc-apple-download-btn a:active,
+#kc-apple-download-btn a:visited,
+{
+    color: #fff;
+}
+
+#kc-apple-download-btn .kc-apple-btn {
+    float: left;
+    width: 140px;
+    padding-left: 96px;
+    background: #569df2;
+}
+
+
+
+#kc-apple-download-btn a i {
+    position: absolute;
+    top: 14px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    vertical-align: top;
+    background-image: url(http://files.cnblogs.com/kenshincui/apple_icon_btn.gif);
+    background-repeat: no-repeat;
+}
+#kc-apple-download-btn .kc-apple-btn i {
+    left: 50px;
+    background-position: 0 0;
+	font-style: normal;
+}
+
+
+
+
+#kc-apple-download-btn a span {
+    font-size: 22px;
+}
+#kc-apple-download-btn a span, #kc-apple-download-btn a em {
+    position: relative;
+    top: 18px;
+    display: block;
+    line-height: 130%;
+    text-align: left;
+}
+
+
+/*目录样式*/
+.kc-catalog{
+    margin-left:30px;
+    margin-bottom:30px;
+    font-size:15px !important;
+}
+.kc-catalog ,
+.kc-catalog ol{
+    position:relative;
+    list-style:none !important;
+    list-style-type:none !important;
+    counter-reset:a;
+}
+.kc-catalog li{
+    list-style-type:none !important;
+}
+.kc-catalog li:before{
+    counter-increment:a;
+    content:counters(a,".")". ";
+    font-size:15px !important;
+}
+.kc-catalog .catalog{
+    display:inline;
+    color:#FFF;
+    background-color:#2D96E9;
+    font-size:16px;
+    font-weight:bold;
+    width:30px;
+    /*width:1em;*/
+    text-align:center;
+    padding-left:5px;
+    padding-right:5px;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.kc-catalog .catalog:before{
+    content:"";
+    list-style:none;
+}
+.kc-catalog .catalog span {
+    display:block;
+}

@@ -16,6 +16,9 @@
 		B948425C1AAD9A650040C424 /* KCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B948425B1AAD9A650040C424 /* KCMainViewController.m */; };
 		B948425F1AAD9AE90040C424 /* KCImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = B948425E1AAD9AE90040C424 /* KCImageData.m */; };
 		B9658EBF1AAEF95F00571F18 /* KCMainOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9658EBE1AAEF95F00571F18 /* KCMainOperationViewController.m */; };
+		B9A58E0B1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E0A1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m */; };
+		B9A58E0E1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */; };
+		B9A58E111AB020BE004FFA3E /* KCMainLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,12 @@
 		B948425E1AAD9AE90040C424 /* KCImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCImageData.m; sourceTree = "<group>"; };
 		B9658EBD1AAEF95F00571F18 /* KCMainOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainOperationViewController.h; sourceTree = "<group>"; };
 		B9658EBE1AAEF95F00571F18 /* KCMainOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainOperationViewController.m; sourceTree = "<group>"; };
+		B9A58E091AAFE886004FFA3E /* KCMainGCDSERIALViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainGCDSERIALViewController.h; sourceTree = "<group>"; };
+		B9A58E0A1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainGCDSERIALViewController.m; sourceTree = "<group>"; };
+		B9A58E0C1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainGCDCONCURRENTViewController.h; sourceTree = "<group>"; };
+		B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainGCDCONCURRENTViewController.m; sourceTree = "<group>"; };
+		B9A58E0F1AB020BE004FFA3E /* KCMainLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainLockViewController.h; sourceTree = "<group>"; };
+		B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainLockViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,12 @@
 				B948425E1AAD9AE90040C424 /* KCImageData.m */,
 				B9658EBD1AAEF95F00571F18 /* KCMainOperationViewController.h */,
 				B9658EBE1AAEF95F00571F18 /* KCMainOperationViewController.m */,
+				B9A58E091AAFE886004FFA3E /* KCMainGCDSERIALViewController.h */,
+				B9A58E0A1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m */,
+				B9A58E0C1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.h */,
+				B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */,
+				B9A58E0F1AB020BE004FFA3E /* KCMainLockViewController.h */,
+				B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */,
 			);
 			path = KCMainViewDemo;
 			sourceTree = "<group>";
@@ -228,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A58E0B1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m in Sources */,
+				B9A58E0E1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m in Sources */,
 				B94842401AAD9A4F0040C424 /* KCMainViewDemo.xcdatamodeld in Sources */,
 				B948425F1AAD9AE90040C424 /* KCImageData.m in Sources */,
 				B948423D1AAD9A4F0040C424 /* AppDelegate.m in Sources */,
+				B9A58E111AB020BE004FFA3E /* KCMainLockViewController.m in Sources */,
 				B948423A1AAD9A4F0040C424 /* main.m in Sources */,
 				B948425C1AAD9A650040C424 /* KCMainViewController.m in Sources */,
 				B9658EBF1AAEF95F00571F18 /* KCMainOperationViewController.m in Sources */,

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "KCMainViewController.h"
 #import "KCMainOperationViewController.h"
+#import "KCMainGCDSERIALViewController.h"
+#import "KCMainGCDCONCURRENTViewController.h"
+#import "KCMainLockViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,7 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    KCMainOperationViewController *kcMainVC=[[KCMainOperationViewController alloc] init];
+    KCMainLockViewController *kcMainVC=[[KCMainLockViewController alloc] init];
     self.window.rootViewController=kcMainVC;
     
     [self.window makeKeyAndVisible];
