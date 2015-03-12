@@ -19,6 +19,7 @@
 		B9A58E0B1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E0A1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m */; };
 		B9A58E0E1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */; };
 		B9A58E111AB020BE004FFA3E /* KCMainLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */; };
+		B9A58E141AB03300004FFA3E /* NSConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A58E131AB03300004FFA3E /* NSConditionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainGCDCONCURRENTViewController.m; sourceTree = "<group>"; };
 		B9A58E0F1AB020BE004FFA3E /* KCMainLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCMainLockViewController.h; sourceTree = "<group>"; };
 		B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCMainLockViewController.m; sourceTree = "<group>"; };
+		B9A58E121AB03300004FFA3E /* NSConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSConditionViewController.h; sourceTree = "<group>"; };
+		B9A58E131AB03300004FFA3E /* NSConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSConditionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				B9A58E0D1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m */,
 				B9A58E0F1AB020BE004FFA3E /* KCMainLockViewController.h */,
 				B9A58E101AB020BE004FFA3E /* KCMainLockViewController.m */,
+				B9A58E121AB03300004FFA3E /* NSConditionViewController.h */,
+				B9A58E131AB03300004FFA3E /* NSConditionViewController.m */,
 			);
 			path = KCMainViewDemo;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9A58E0B1AAFE886004FFA3E /* KCMainGCDSERIALViewController.m in Sources */,
+				B9A58E141AB03300004FFA3E /* NSConditionViewController.m in Sources */,
 				B9A58E0E1AB01A1F004FFA3E /* KCMainGCDCONCURRENTViewController.m in Sources */,
 				B94842401AAD9A4F0040C424 /* KCMainViewDemo.xcdatamodeld in Sources */,
 				B948425F1AAD9AE90040C424 /* KCImageData.m in Sources */,

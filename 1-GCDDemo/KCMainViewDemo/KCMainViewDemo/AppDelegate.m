@@ -12,6 +12,7 @@
 #import "KCMainGCDSERIALViewController.h"
 #import "KCMainGCDCONCURRENTViewController.h"
 #import "KCMainLockViewController.h"
+#import "NSConditionViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    KCMainLockViewController *kcMainVC=[[KCMainLockViewController alloc] init];
+    NSConditionViewController *kcMainVC=[[NSConditionViewController alloc] init];
     self.window.rootViewController=kcMainVC;
     
     [self.window makeKeyAndVisible];
