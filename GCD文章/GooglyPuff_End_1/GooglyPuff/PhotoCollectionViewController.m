@@ -44,11 +44,8 @@ UIActionSheetDelegate>
                                              selector:@selector(contentChangedNotification:)
                                                  name:kPhotoManagerContentUpdateNotification
                                                object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(contentChangedNotification:)
-                                                 name:kPhotoManagerAddedContentNotification
-                                               object:nil];
+                                             selector:@selector(contentChangedNotification:) name:kPhotoManagerAddedContentNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -69,7 +66,6 @@ UIActionSheetDelegate>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     NSInteger count = [[[PhotoManager sharedManager] photos] count];
-    NSLog(@"photo count:%lu",count);
     return count;
 }
 
@@ -115,20 +111,20 @@ UIActionSheetDelegate>
             break;
         }
         case PhotoStatusDownloading: {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下载"
-                                                            message:@"图片正在下载中......"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Downloading"
+                                                            message:@"The image is currently downloading"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"确定"
+                                                  cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
             [alert show];
             break;
         }
         case PhotoStatusFailed: //Fall through to default
         default: {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"失败"
-                                                            message:@"图片创建失败........"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image Failed"
+                                                            message:@"The image failed to be created"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"确定"
+                                                  cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -142,16 +138,14 @@ UIActionSheetDelegate>
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
     for (NSDictionary *dictionary in info) {
-        NSLog(@"dictionary:%@",dictionary[UIImagePickerControllerReferenceURL] );
-        
         [self.library assetForURL:dictionary[UIImagePickerControllerReferenceURL] resultBlock:^(ALAsset *asset) {
             Photo *photo = [[Photo alloc] initWithAsset:asset];
             [[PhotoManager sharedManager] addPhoto:photo];
         } failureBlock:^(NSError *error) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"权限拒绝"
-                                                            message:@"请在设置中,保证设置正常"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Denied"
+                                                            message:@"To access your photos, please change the permissions in Settings"
                                                            delegate:nil
-                                                  cancelButtonTitle:@"确定"
+                                                  cancelButtonTitle:@"ok"
                                                   otherButtonTitles:nil, nil];
             [alert show];
         }];
@@ -180,7 +174,7 @@ UIActionSheetDelegate>
 /// The upper right UIBarButtonItem method
 - (IBAction)addPhotoAssets:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"获取图片:" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相册", @"互联网", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Get Photos From:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library", @"Le Internet", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -222,7 +216,16 @@ UIActionSheetDelegate>
 
 - (void)showOrHideNavPrompt
 {
-    // Implement me!
+    NSUInteger count = [[PhotoManager sharedManager] photos].count;
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)); // 1
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){ // 2
+        if (!count) {
+            [self.navigationItem setPrompt:@"Add photos with faces to Googlyify them!"];
+        } else {
+            [self.navigationItem setPrompt:nil];
+        }
+    });
 }
 
 - (void)downloadImageAssets
@@ -230,11 +233,11 @@ UIActionSheetDelegate>
     [[PhotoManager sharedManager] downloadPhotosWithCompletionBlock:^(NSError *error) {
         
         // This completion block currently executes at the wrong time
-        NSString *message = error ? [error localizedDescription] : @"图片已经从互联网中下载完成....";
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"下载完成"
+        NSString *message = error ? [error localizedDescription] : @"The images have finished downloading";
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Download Complete"
                                                             message:message
                                                            delegate:nil
-                                                  cancelButtonTitle:@"确定"
+                                                  cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
         [alertView show];
     }];

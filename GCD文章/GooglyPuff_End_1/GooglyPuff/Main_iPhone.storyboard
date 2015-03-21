@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
     </dependencies>
     <scenes>
-        <!--图片-->
+        <!--Photos-->
         <scene sceneID="AVE-pz-g1o">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="loB-nY-1vu" customClass="PhotoCollectionViewController" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="loB-nY-1vu" id="2gh-dP-VeS"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="图片" id="Zd3-DM-yiZ">
+                    <navigationItem key="navigationItem" title="Photos" id="Zd3-DM-yiZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LJq-hW-eEU">
                             <connections>
                                 <action selector="addPhotoAssets:" destination="loB-nY-1vu" id="8cA-cl-ufH"/>
@@ -76,7 +76,7 @@
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qv2-pI-W1I"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
